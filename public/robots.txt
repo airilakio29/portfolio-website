@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://airil-portfolio.vercel.app/sitemap.xml

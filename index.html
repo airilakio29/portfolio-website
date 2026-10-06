@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airil Asyraff Zulkifli | Software Developer & Cloud Enthusiast</title>
+    <meta name="description" content="Portfolio of Airil Asyraff Zulkifli - Software Developer & Cloud Enthusiast studying Information Technology at Universiti Teknologi PETRONAS. Hackathon winner, full-stack developer & cloud enthusiast." />
+    <meta name="keywords" content="Airil Asyraff Zulkifli, Software Developer, Cloud Enthusiast, UTP, KiroKash, Terra Guard, React, TypeScript, C#, AWS" />
+    <meta name="author" content="Airil Asyraff Zulkifli" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://airil-portfolio.vercel.app/" />
+    <meta property="og:title" content="Airil Asyraff Zulkifli | Software Developer & Cloud Enthusiast" />
+    <meta property="og:description" content="Personal portfolio of Airil Asyraff Zulkifli. Explore flagship projects like KiroKash and Terra Guard." />
+    <meta property="og:image" content="/og-preview.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Airil Asyraff Zulkifli | Software Developer & Cloud Enthusiast" />
+    <meta name="twitter:description" content="Personal portfolio of Airil Asyraff Zulkifli. Explore flagship projects like KiroKash and Terra Guard." />
+    <meta name="twitter:image" content="/og-preview.png" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Theme initialization script to prevent flash of wrong theme -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('airil_portfolio_theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'light' || (!stored && !prefersDark)) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-background text-foreground antialiased selection:bg-terminal-green selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
