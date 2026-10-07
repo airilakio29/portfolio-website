@@ -12,6 +12,8 @@ export interface Project {
   stars?: number;
   featured: boolean;
   tags: string[];
+  previewImage?: string;
+  previewAlt?: string;
   problem: string;
   overview: string;
   architectureDetails: string[];
@@ -137,6 +139,8 @@ export const PROJECTS: Project[] = [
     repoUrl: 'https://github.com/airilakio29/KiroKash',
     featured: true,
     tags: ['React 19', 'Vite 8', 'Firebase Firestore', 'Firebase Auth', 'jsPDF', 'Canvas API'],
+    previewImage: '/projects/kirokash-preview.png',
+    previewAlt: 'KiroKash Student Financial Dashboard and Multi-Account Tracker UI',
     problem: 'College and university students juggle fragmented allowances, PTPTN loan disbursements, part-time wages, hostel fees, and daily food expenses across multiple bank accounts and e-wallets (Touch \'n Go, GrabPay, Boost). Existing commercial budgeting apps are over-engineered, cluttered with subscription paywalls, or fail to cater to Malaysian student realities.',
     overview: 'KiroKash began its life as KampusKash, which captured 1st Place at the KrackedDev Build Day mini hackathon. Seeing its immediate potential to genuinely assist fellow university peers, Airil continued development as a solo developer, rebranding and re-engineering the application into KiroKash with a multi-account foundation, responsive budget thresholds, and 9 curated themes.',
     architectureDetails: [
@@ -211,10 +215,12 @@ export const PROJECTS: Project[] = [
     summary: 'A mission-critical disaster monitoring command center built for the Malaysian context, integrating Gemini 1.5 Flash for proactive tactical situation reports (SITREPs).',
     period: '2026',
     role: 'Full Stack & AI Integration Developer',
-    liveUrl: 'https://natures-event-zeta.vercel.app',
+    liveUrl: 'https://natures-event.vercel.app',
     repoUrl: 'https://github.com/airilakio29/Terra-Guard',
     featured: true,
     tags: ['FastAPI (Python)', 'Gemini 1.5 Flash', 'Vertex AI', 'React', 'Tailwind CSS', 'Leaflet'],
+    previewImage: '/projects/terraguard-preview.png',
+    previewAlt: 'Terra Guard Real-Time National Disaster Monitoring Tactical Command Center UI',
     problem: 'During monsoon floods and extreme weather in Malaysia, public data is scattered across fragmented bulletins. Responders and at-risk citizens lack a single pane of glass for real-time hazard triangulation and clear, accessible tactical advice.',
     overview: 'Developed as a high-stakes hackathon project that reached the competition finals, Terra Guard elevates traditional passive dashboards into a proactive intelligence officer. It ingests live disaster feeds and generates synthesized tactical briefings (SITREPs) via Google Gemini 1.5 Flash.',
     architectureDetails: [
@@ -284,9 +290,12 @@ export const PROJECTS: Project[] = [
     summary: 'A robust hotel operations and guest reservation platform engineered with PHP and MySQL, supporting end-to-end room bookings, guest billing, and live administrative management.',
     period: '2026',
     role: 'Full Stack Developer',
+    liveUrl: 'https://hotelier-blue.vercel.app',
     repoUrl: 'https://github.com/airilakio29/Hotelier',
     featured: true,
-    tags: ['PHP', 'MySQL', 'Apache', 'JavaScript', 'HTML5 / CSS3', 'Database Schema'],
+    tags: ['JavaScript', 'HTML5 / CSS3', 'Vercel Deployment', 'PHP', 'MySQL', 'Full-Stack Suite'],
+    previewImage: '/projects/hotelier-preview.png',
+    previewAlt: 'Hotelier Luxury Hotel Management and Room Reservation System UI',
     problem: 'Independent boutique hotels need an integrated platform that balances modern guest self-service booking with fine-grained administrative controls over room inventory, extra facilities, and instant invoice calculations.',
     overview: 'Hotelier was architected as an end-to-end hotel management solution. Designed with a relational MySQL schema, it provides a customer-facing booking engine alongside back-office administrative tooling for facility pricing and live reservation logs.',
     architectureDetails: [
@@ -328,6 +337,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     outcomes: [
+      'Deployed live at hotelier-blue.vercel.app with interactive booking workflows, room catalog, and billing.',
       'Complete modular codebase with turn-key SQL seed scripts for reproducible local or cloud staging.',
       'Clean foundation for full-cycle database and web application development.'
     ],

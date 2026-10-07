@@ -108,25 +108,85 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
             ))}
           </div>
 
-          {/* Clearly marked Screenshot Drop Slot */}
-          <div
-            className="mx-3.5 mb-3.5 p-3.5 rounded-md border border-dashed flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs"
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.25)',
-              borderColor: 'var(--border-color)',
-              color: 'var(--text-muted)',
-            }}
-          >
-            <div className="flex items-center gap-2.5">
-              <ImageIcon className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-              <span>
-                <strong className="text-gray-200">UI Screenshot Slot:</strong> Designed terminal frame active. Ready for production screenshots.
+          {/* UI Screenshot Slot */}
+          {project.previewImage ? (
+            <div
+              className="mx-3.5 mb-3.5 rounded-lg border overflow-hidden relative group"
+              style={{
+                borderColor: 'var(--border-color)',
+                backgroundColor: 'rgba(0, 0, 0, 0.45)',
+              }}
+            >
+              <div
+                className="px-3.5 py-2 border-b flex items-center justify-between text-xs font-mono"
+                style={{
+                  backgroundColor: 'var(--bg-panel-header)',
+                  borderColor: 'var(--border-color)',
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-gray-200 font-semibold text-[11px] sm:text-xs">
+                    UI Screenshot // {project.title}
+                  </span>
+                </div>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 text-[11px] font-semibold inline-flex items-center gap-1 transition-colors"
+                  >
+                    <span>Live Web</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
+              <div className="relative aspect-[16/10] sm:aspect-video w-full overflow-hidden bg-black/60">
+                <img
+                  src={project.previewImage}
+                  alt={project.previewAlt || `${project.title} UI Screenshot`}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3.5">
+                  <span className="text-[11px] font-mono text-emerald-300 bg-black/90 px-2.5 py-1 rounded border border-emerald-500/40 shadow">
+                    ● VERIFIED DEPLOYMENT CAPTURE
+                  </span>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono text-black bg-emerald-400 hover:bg-emerald-300 px-3 py-1.5 rounded font-bold transition-all shadow-lg inline-flex items-center gap-1"
+                    >
+                      <span>Visit Site</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div
+              className="mx-3.5 mb-3.5 p-3.5 rounded-md border border-dashed flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs"
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.25)',
+                borderColor: 'var(--border-color)',
+                color: 'var(--text-muted)',
+              }}
+            >
+              <div className="flex items-center gap-2.5">
+                <ImageIcon className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <span>
+                  <strong className="text-gray-200">UI Screenshot Slot:</strong> Designed terminal frame active. Ready for production screenshots.
+                </span>
+              </div>
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded bg-emerald-950/40 text-emerald-300 border border-emerald-500/30 font-semibold whitespace-nowrap">
+                FRAME READY
               </span>
             </div>
-            <span className="text-[11px] font-mono px-2.5 py-1 rounded bg-emerald-950/40 text-emerald-300 border border-emerald-500/30 font-semibold whitespace-nowrap">
-              FRAME READY
-            </span>
-          </div>
+          )}
         </div>
 
         {/* Tech Stack Badges */}
