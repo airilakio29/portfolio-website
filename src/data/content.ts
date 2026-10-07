@@ -49,7 +49,7 @@ export const PERSONAL_INFO = {
     expectedGraduation: '2029',
     honors: "Dean's List (2 Times - 2026)",
   },
-  goal: 'Seeking an internship with a focus on Full Stack Engineering and Cloud Systems.',
+  goal: 'Seeking an internship starting September 2027 with a focus on Full Stack Engineering and Cloud Systems.',
   email: 'airil_25009515@utp.edu.my',
   social: {
     github: 'https://github.com/airilakio29',

@@ -58,7 +58,7 @@ export const AboutSection: React.FC = () => {
                   <span>PRIMARY OBJECTIVE</span>
                 </div>
                 <div className="space-y-1.5" style={{ color: 'var(--text-secondary)' }}>
-                  <p className="font-bold text-white text-base">Internship Placement Search</p>
+                  <p className="font-bold text-white text-base">Internship Placement (September 2027)</p>
                   <p>{PERSONAL_INFO.goal}</p>
                   <div className="pt-2 flex items-center gap-2 text-sm" style={{ color: 'var(--accent-cyan)' }}>
                     <MapPin className="w-4 h-4 flex-shrink-0" />

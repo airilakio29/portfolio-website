@@ -45,7 +45,7 @@ export const InteractiveCLI: React.FC = () => {
           <div className="space-y-1 text-xs">
             <p className="font-semibold text-emerald-400">Available commands:</p>
             <p><span className="text-amber-400">whoami</span> - Display Airil's summary & identity</p>
-            <p><span className="text-amber-400">about</span> - Education, location, Dean's List, internship goals</p>
+            <p><span className="text-amber-400">about</span> - Education, location, Dean's List, internship goals (Sept 2027)</p>
             <p><span className="text-amber-400">skills</span> - Grouped technical capabilities & stacks</p>
             <p><span className="text-amber-400">projects</span> - View featured projects (KiroKash, Terra Guard, Hotelier)</p>
             <p><span className="text-amber-400">recognition</span> - View hackathon placings & academic distinctions</p>

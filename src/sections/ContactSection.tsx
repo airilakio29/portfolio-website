@@ -42,7 +42,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <p className="text-base sm:text-lg font-sans text-gray-200 leading-relaxed">
-              I am currently seeking internship opportunities in Full Stack Software Development and Cloud Architecture. Feel free to connect directly through any of the channels below:
+              I am currently seeking internship opportunities starting September 2027 in Full Stack Software Development and Cloud Architecture. Feel free to connect directly through any of the channels below:
             </p>
 
             {/* Clickable Contact Cards Grid */}
@@ -199,7 +199,7 @@ export const ContactSection: React.FC = () => {
               }}
             >
               <div>
-                <span className="font-bold text-white">Availability:</span> Open to Full Stack, Software Engineering & Cloud internships for 2026/2027.
+                <span className="font-bold text-white">Availability:</span> Open to Full Stack, Software Engineering & Cloud internships starting September 2027.
               </div>
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}

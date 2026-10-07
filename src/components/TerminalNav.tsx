@@ -151,7 +151,7 @@ export const TerminalNav: React.FC = () => {
           >
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-emerald-400">STATUS:</span>
-            <span>OPEN FOR INTERNSHIP</span>
+            <span>INTERNSHIP (SEPT 2027)</span>
           </div>
 
           <ThemeToggle />

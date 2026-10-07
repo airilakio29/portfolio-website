@@ -165,7 +165,7 @@ export const ContactForm: React.FC = () => {
           <input
             id="sender-subject"
             type="text"
-            placeholder="e.g. Internship Inquiry / Technical Role"
+            placeholder="e.g. Internship Inquiry (Sept 2027) / Technical Role"
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
             className="w-full px-3.5 py-2.5 rounded-md border font-mono text-sm sm:text-base transition-colors focus:outline-none focus:ring-1 focus:ring-emerald-400"
