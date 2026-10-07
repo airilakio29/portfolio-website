@@ -40,7 +40,7 @@ export const PixelAvatar: React.FC<PixelAvatarProps> = ({
       setLoaded(true);
 
       const targetWidth = 320;
-      const targetHeight = 380;
+      const targetHeight = 400; // Exact 4:5 aspect ratio to fit the viewfinder frame flush
       canvas.width = targetWidth;
       canvas.height = targetHeight;
 
@@ -48,20 +48,21 @@ export const PixelAvatar: React.FC<PixelAvatarProps> = ({
       const offCtx = offCanvas.getContext('2d');
       if (!offCtx) return;
 
-      const pxW = Math.max(1, Math.floor(targetWidth / pixelSize));
-      const pxH = Math.max(1, Math.floor(targetHeight / pixelSize));
+      const pxW = Math.max(1, Math.floor(targetWidth / pixelSize)); // 80
+      const pxH = Math.max(1, Math.floor(targetHeight / pixelSize)); // 100
       offCanvas.width = pxW;
       offCanvas.height = pxH;
 
       const sWidth = img.width || 1;
       const sHeight = img.height || 1;
-      const tgtAspect = targetWidth / targetHeight;
+      const tgtAspect = targetWidth / targetHeight; // 0.80
 
-      // Center Airil's face accurately in the viewfinder
-      const cropW = Math.min(sWidth, Math.max(260, sWidth * 0.70));
-      const cropH = cropW / tgtAspect;
-      const faceCenterX = sWidth * 0.69;
-      const faceCenterY = sHeight * 0.39;
+      // Center Airil's face and upper body accurately in the viewfinder frame
+      // sWidth = 576, sHeight = 1024. Face center is around x=380, y=360
+      const cropW = Math.min(sWidth, Math.max(300, sWidth * 0.82)); // ~472px width
+      const cropH = cropW / tgtAspect; // ~590px height
+      const faceCenterX = sWidth * 0.66; // aligns nose and eyes in the frame
+      const faceCenterY = sHeight * 0.36; // captures full hair down past chin and collar
 
       const startX = Math.max(0, Math.min(sWidth - cropW, faceCenterX - cropW / 2));
       const startY = Math.max(0, Math.min(sHeight - cropH, faceCenterY - cropH / 2));
@@ -249,24 +250,25 @@ export const PixelAvatar: React.FC<PixelAvatarProps> = ({
         </div>
       </div>
 
-      {/* Target Reticles (Corner Brackets) */}
-      <div className="absolute top-9 left-2.5 w-4 h-4 border-t-2 border-l-2 border-emerald-400/80 pointer-events-none z-20" />
-      <div className="absolute top-9 right-2.5 w-4 h-4 border-t-2 border-r-2 border-emerald-400/80 pointer-events-none z-20" />
-      <div className="absolute bottom-9 left-2.5 w-4 h-4 border-b-2 border-l-2 border-emerald-400/80 pointer-events-none z-20" />
-      <div className="absolute bottom-9 right-2.5 w-4 h-4 border-b-2 border-r-2 border-emerald-400/80 pointer-events-none z-20" />
+      {/* Viewfinder Area: exact 4/5 aspect ratio, flush to borders */}
+      <div className="relative w-full aspect-[4/5] overflow-hidden bg-black flex items-center justify-center">
+        {/* Target Reticles (Corner Brackets hugging the photo) */}
+        <div className="absolute top-2.5 left-2.5 w-4 h-4 border-t-2 border-l-2 border-emerald-400 pointer-events-none z-20" />
+        <div className="absolute top-2.5 right-2.5 w-4 h-4 border-t-2 border-r-2 border-emerald-400 pointer-events-none z-20" />
+        <div className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b-2 border-l-2 border-emerald-400 pointer-events-none z-20" />
+        <div className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b-2 border-r-2 border-emerald-400 pointer-events-none z-20" />
 
-      {/* Crosshair Target Centered */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20 opacity-35">
-        <div className="w-10 h-10 border border-emerald-400/50 rounded-full flex items-center justify-center">
-          <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+        {/* Crosshair Target Centered */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20 opacity-35">
+          <div className="w-10 h-10 border border-emerald-400/50 rounded-full flex items-center justify-center">
+            <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+          </div>
         </div>
-      </div>
 
-      {/* Canvas Pixel Display */}
-      <div className="relative flex items-center justify-center w-full min-h-[340px] sm:min-h-[380px] bg-black/70">
+        {/* Canvas Pixel Display: 100% width and height, completely filling the frame */}
         <canvas
           ref={canvasRef}
-          className={`w-full h-auto max-w-[320px] aspect-[4/5] object-cover block mx-auto transition-transform duration-300 group-hover:scale-[1.02] ${
+          className={`w-full h-full block object-cover transition-transform duration-300 group-hover:scale-[1.02] ${
             loaded ? 'opacity-100' : 'opacity-0'
           }`}
           style={{ imageRendering: 'pixelated' }}
@@ -277,7 +279,7 @@ export const PixelAvatar: React.FC<PixelAvatarProps> = ({
           <img
             src={imageSrc}
             alt="Airil Asyraff Zulkifli"
-            className="w-full h-auto max-w-[320px] aspect-[4/5] object-cover object-[75%_38%] block mx-auto absolute inset-0 m-auto scale-105"
+            className="w-full h-full object-cover object-[70%_35%] block absolute inset-0"
             style={{
               imageRendering: 'pixelated',
               filter: 'contrast(140%) brightness(95%) hue-rotate(190deg)',
@@ -299,7 +301,7 @@ export const PixelAvatar: React.FC<PixelAvatarProps> = ({
           <span>CYBER-BLUE // MULTI</span>
         </span>
         <span className="text-amber-400">AIRIL ASYRAFF</span>
-        <span className="text-emerald-400">RES: 80x95_PX</span>
+        <span className="text-emerald-400">RES: 80x100_PX</span>
       </div>
     </div>
   );

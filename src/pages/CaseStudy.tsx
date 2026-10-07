@@ -222,11 +222,11 @@ export const CaseStudy: React.FC = () => {
           </div>
 
           {/* Screenshot Display Frame */}
-          <div className="relative aspect-[16/10] sm:aspect-video w-full overflow-hidden bg-black/60">
+          <div className="relative aspect-[16/9] sm:aspect-[2.05/1] w-full overflow-hidden bg-black/90 flex items-center justify-center">
             <img
               src={project.previewImage}
               alt={project.previewAlt || `${project.title} Production Interface`}
-              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-contain sm:object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end justify-between p-4 sm:p-5">
               <div>

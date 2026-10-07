@@ -142,12 +142,12 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
                   </a>
                 )}
               </div>
-              <div className="relative aspect-[16/10] sm:aspect-video w-full overflow-hidden bg-black/60">
+              <div className="relative aspect-[16/9] sm:aspect-[2.05/1] w-full overflow-hidden bg-black/90 flex items-center justify-center">
                 <img
                   src={project.previewImage}
                   alt={project.previewAlt || `${project.title} UI Screenshot`}
                   loading="lazy"
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain sm:object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3.5">
                   <span className="text-[11px] font-mono text-emerald-300 bg-black/90 px-2.5 py-1 rounded border border-emerald-500/40 shadow">
