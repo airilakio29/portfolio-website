@@ -2,7 +2,7 @@
 
 > Interactive retro terminal & cyber-themed personal developer portfolio. Built with React 19, Vite, TypeScript, Tailwind CSS, and Framer Motion.
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20Portfolio-00ff66?style=for-the-badge&logo=vercel)](https://github.com/airilakio29)
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Portfolio-00ff66?style=for-the-badge&logo=vercel)](https://portfolio-airil.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 ---
