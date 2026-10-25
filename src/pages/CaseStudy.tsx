@@ -100,6 +100,13 @@ export const CaseStudy: React.FC = () => {
                 </span>
               )}
 
+              {project.id === 'terra-guard-v2' && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs sm:text-sm font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                  <Sparkles className="w-4 h-4 text-emerald-400" />
+                  <span>SIME DARBY HACKATHON EDITION</span>
+                </span>
+              )}
+
               {project.id === 'terra-guard' && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded text-xs sm:text-sm font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
                   <Sparkles className="w-4 h-4 text-cyan-400" />

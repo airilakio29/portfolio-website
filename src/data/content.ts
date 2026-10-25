@@ -207,6 +207,94 @@ export const PROJECTS: Project[] = [
     }
   },
   {
+    id: 'terra-guard-v2',
+    slug: 'terra-guard-v2',
+    title: 'Terra Guard V2',
+    badge: 'SIME DARBY HACKATHON',
+    tagline: 'Citizen Disaster Companion & Cognitive De-escalation PWA',
+    summary: 'A mobile-first, cognitive-de-escalation disaster monitoring and safety companion engineered for ordinary Malaysian citizens in acute flood distress to answer: Am I safe? What do I do right now? Where is the nearest shelter?',
+    period: '2026',
+    role: 'Lead Developer & Architect (Sime Darby Hackathon)',
+    liveUrl: 'https://terra-guard-v2.vercel.app',
+    repoUrl: 'https://github.com/airilakio29/terra-guard-v2',
+    featured: true,
+    tags: ['React 19', 'TypeScript', 'Vite', 'Firebase Auth', 'Cloud Firestore', 'PWA / Offline', 'Web Speech API', 'Vanilla CSS'],
+    previewImage: '/projects/terraguard-v2-preview.png',
+    previewAlt: 'Terra Guard V2 Citizen Disaster Companion & Live Telemetry Dashboard Interface',
+    problem: 'Unlike tactical command-center operators, everyday citizens navigating flash floods experience acute cognitive distress. Traditional dashboards overload users with raw radar feeds, radar telemetry, and confusing gauges. What families desperately need is instant clarity: a clear risk tier, plain-language directives, hands-free voice guidance, and an offline survival pack.',
+    overview: 'Terra Guard V2 is a complete civilian reimagining of the original Terra Guard concept, developed for the Sime Darby Hackathon. Designed around a cognitive-de-escalation UX framework, it replaces confusing telemetry with a split-second 3-tier risk system, zero-typing safety triage chips backed by official APM/NADMA/Bomba protocols, interactive relief center (PPS) routing, and 100% offline 72-hour survival preparedness.',
+    architectureDetails: [
+      'Mobile-First PWA Architecture: Cross-platform Progressive Web App running on Android, iOS, and desktop with standalone notch safety, offline service worker caching, and home-screen shortcuts.',
+      'Cognitive De-Escalation Design: Strict Vanilla CSS design tokens with sharp square geometry and 3 alert tiers (All Clear, Flash Flood Advisory, Critical Evacuation Directive) validated via automated color compliance check.',
+      'Authentication & Emergency Guest Access: Firebase Authentication supporting Google OAuth (GoogleAuthProvider with iOS standalone redirect fallback) and zero-barrier anonymous emergency guest access.',
+      'Live Spatial Vector Map & Route Guidance: Real-time GPS location tracking with hazard polygon overlays (water depth readings) and open relief centers (PPS) with capacity meters and walking navigation.',
+      'Zero-Typing Voice AI Safety Assistant: 1-tap pre-composed triage chips based on verified National Civil Defence protocols, paired with Web Speech API text-to-speech for hands-free audio guidance while moving.',
+      '72-Hour Offline Survival Kit & Hotline Dials: LocalStorage-persisted emergency checklist and 1-tap direct phone triggers to MERS 999, Bomba Dan Penyelamat, APM, and JKM Disaster Relief.',
+      'Bilingual Arc (EN / BM): Complete real-time toggle between English and Bahasa Melayu for all alert levels, civil directives, survival checklists, and audio triage.'
+    ],
+    keyFeatures: [
+      {
+        title: 'Split-Second Risk Status',
+        desc: 'Instant color and icon-based alert tiers with plain-language civilian instructions instead of confusing radar gauges.'
+      },
+      {
+        title: 'Zero-Typing AI Safety & Audio Guidance',
+        desc: 'Pre-composed emergency triage chips based on APM/NADMA/Bomba protocols, with integrated Web Speech API ("Read Aloud") for hands-free evacuation.'
+      },
+      {
+        title: 'Expansive Live Map & Shelter Routing',
+        desc: 'Live GPS location, hazard polygons with water depth readings, and open relief centers (PPS) with capacity meters and walking navigation.'
+      },
+      {
+        title: 'Google OAuth & Instant Guest Access',
+        desc: 'One-tap Google Sign-In with iOS standalone redirect fallback, plus instant guest access for users in urgent crisis situations.'
+      },
+      {
+        title: '72-Hour Offline Survival Kit',
+        desc: '100% offline-ready checklist persisted via LocalStorage, with 1-tap direct dials to MERS 999, Bomba, APM, and JKM.'
+      },
+      {
+        title: 'Bilingual (EN / BM) Toggle',
+        desc: 'Seamless real-time language switching between English and Bahasa Melayu across the entire application interface.'
+      },
+      {
+        title: 'Evaluator Demo Scenarios',
+        desc: 'Built-in scenario switcher simulating Subang (0.6m advisory), Kelantan (1.4m danger/evacuation), and Penang (safe baseline).'
+      }
+    ],
+    challengesAndLearnings: [
+      {
+        title: 'Cognitive De-escalation UX under Extreme Crisis',
+        desc: 'Pivoting from an operator-centric command dashboard to a civilian companion required stripping out telemetry clutter and engineering high-contrast, thumb-reachable action chips with audio playback.'
+      },
+      {
+        title: 'Cross-Platform PWA Standalone & iOS OAuth Nuances',
+        desc: 'Engineered a resilient Google OAuth redirect flow to handle standalone iOS Safari web-app constraints where popup authentications fail, along with custom illustrated home-screen installation guides.'
+      }
+    ],
+    outcomes: [
+      'Engineered and pitched for the Sime Darby Hackathon, advancing the Terra Guard disaster intelligence mission.',
+      'Fully deployed as a cross-platform installable PWA at terra-guard-v2.vercel.app with zero bundle bloat.',
+      'Enforced 100% tokenized color compliance with custom automated audit scripts.'
+    ],
+    futureMilestones: [
+      'Live IoT water level telemetry sensor integration with JPS (Jabatan Pengairan dan Saliran).',
+      'Offline peer-to-peer mesh networking to relay SOS beacon signals during cellular network tower outages.'
+    ],
+    terminalMockup: {
+      command: 'terraguard-v2 --status --citizen-triage --pwa',
+      outputLines: [
+        'INIT: Terra Guard V2 [Civilian De-escalation Core]...',
+        'PWA: ServiceWorker active | 100% Offline Survival Kit cached',
+        'AUTH: Verified Google OAuth + Emergency Guest Mode ready',
+        'RISK_STATUS: Kelantan Basin [Level 3 - Critical Directive]',
+        'AUDIO_ENGINE: Web Speech API ("Read Aloud") synthesized',
+        'SHELTER_MAP: PPS SMK Sultan Ibrahim [Capacity 84% - Route 450m]',
+        'STATUS: Sime Darby Hackathon Citizen Companion Online'
+      ]
+    }
+  },
+  {
     id: 'terra-guard',
     slug: 'terra-guard',
     title: 'Terra Guard',

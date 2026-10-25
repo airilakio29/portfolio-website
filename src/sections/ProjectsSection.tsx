@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { TerminalWindow } from '../components/TerminalWindow';
 import { PROJECTS, type Project } from '../data/content';
 import { GithubIcon } from '../components/Icons';
-import { ExternalLink, ArrowRight, Trophy, Terminal, Image as ImageIcon } from 'lucide-react';
+import { ExternalLink, ArrowRight, Trophy, Terminal, Image as ImageIcon, Sparkles } from 'lucide-react';
 
 export const ProjectsSection: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ export const ProjectsSection: React.FC = () => {
             <span className="font-bold text-white uppercase tracking-wider">FEATURED REPOSITORIES & PROJECTS</span>
           </div>
           <span className="text-xs sm:text-sm font-semibold" style={{ color: 'var(--accent-amber)' }}>
-            $ ls -t projects/ (3 matched)
+            $ ls -t projects/ ({PROJECTS.length} matched)
           </span>
         </div>
 
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       title={`airil@dev:~/projects/${project.slug}`}
       path=""
       badge={project.badge}
-      badgeColor={isFlagship ? 'amber' : index === 1 ? 'cyan' : 'green'}
+      badgeColor={isFlagship ? 'amber' : project.id === 'terra-guard-v2' ? 'green' : index === 1 ? 'cyan' : 'green'}
       className={`transition-all duration-200 hover:border-emerald-500/50 ${
         isFlagship ? 'border-amber-500/30' : ''
       }`}
@@ -57,6 +57,12 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-mono bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">
                   <Trophy className="w-3.5 h-3.5 text-amber-400" />
                   <span>1ST PLACE WINNER</span>
+                </span>
+              )}
+              {project.id === 'terra-guard-v2' && (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>SIME DARBY HACKATHON</span>
                 </span>
               )}
             </div>
